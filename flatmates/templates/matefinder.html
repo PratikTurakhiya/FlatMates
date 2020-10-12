@@ -1,0 +1,164 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Warehouse &mdash; Website Template by Colorlib</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,900|Oswald:300,400,700" rel="stylesheet">
+    
+
+    <link rel="stylesheet" href="{% static 'warehouse/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'warehouse/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'warehouse/style.css' %}">
+    <title>FlatMates</title>
+    <link href="{% static 'images/mylogo.ico' %}" rel="icon" type="image/x-icon" />
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'azenta/css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'azenta/css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'azenta/css/jquery-ui.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'azenta/css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'azenta/css/style.css' %}" type="text/css">
+  </head> 
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+    <header class="header-section">
+      <div class="top-nav">
+          <div class="container">
+              <div class="row">
+                <div class="col-lg-20">
+                    <nav class="main-menu">
+                        <ul>
+                            <li><img src="{% static 'images/mylogod.png' %}" alt="" width="90px" height="100px"></html></li>
+                              <li class="active"><a href="bg">Home</a></li>
+                              <li><a href="owner">RentHome</a></li>
+                              <li><a href="screen">FindOnRent</a></li>
+                              <li><a href="homeshare">ShareHome</a></li>
+                              <li><a href="roomfind">FindOnShare</a></li>
+                              <li><a href="locate">ContactUs</a></li>
+                              <li><a href="logout">LOGOUT</a></li>
+                             </ul>
+                      </nav>
+                  </div>
+   
+              </div>
+          </div>
+      </div>
+      
+  </header>
+
+
+
+   
+    
+
+    
+    <div class="site-block-wrap">
+    <div class="owl-carousel with-dots">
+      <div class="site-blocks-cover overlay overlay-2" style="background-image: url({% static 'warehouse/hero_1.jpg' %});" data-aos="fade" id="home-section">
+
+
+        <div class="container">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-md-6 mt-lg-5 text-center">
+              <h1 class="text-shadow">Post &amp; Find Fltes Here</h1>
+              <p class="mb-5 text-shadow">An only place where you can find flat ad well as mate</p>
+              <p><a href="#" target="_blank" class="btn btn-primary px-5 py-3">Get Started</a></p>
+              
+            </div>
+          </div>
+        </div>
+  
+        
+      </div>  
+  
+      <div class="site-blocks-cover overlay overlay-2" style="background-image: url({% static 'warehouse/hero_2.jpg' %});" data-aos="fade" id="home-section">
+  
+  
+        <div class="container">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-md-6 mt-lg-5 text-center">
+              <h1 class="text-shadow">Find a perfect Flat &amp; Mate</h1>
+              <p class="mb-5 text-shadow">A secure platform trusted by thousands people</p>
+              <p><a href="#" target="_blank" class="btn btn-primary px-5 py-3">Get Started</a></p>
+              
+            </div>
+          </div>
+        </div>
+  
+        
+      </div>  
+    </div>   
+    
+  </div>      
+
+
+  <div class="site-section" id="properties-section">
+      <div class="container">
+        <div class="row large-gutters">
+          {% for s in share %}
+          <div class="col-md-6 col-lg-4 mb-5 mb-lg-5 ">
+            <div class="ftco-media-1">
+              <div class="ftco-media-1-inner">
+                <a href="roomfind/{{s.id}}" class="d-inline-block mb-4"><img src="{% static 'warehouse/property_1.jpg' %}" alt="FImageo" class="img-fluid"></a>
+                <div class="ftco-media-details">
+                  <h3>{{s.address}}</h3>
+                  <p>{{s.city}}</p>
+                  <p>{{s.hometype}} -{{s.room}}</p>
+                  <strong>₹{{s.price}}</strong>
+                </div>
+  
+              </div> 
+            </div>
+          </div>
+          {% endfor %}
+         <!-- <div class="col-md-6 col-lg-4 mb-5 mb-lg-5 ">
+              <div class="ftco-media-1">
+                  <div class="ftco-media-1-inner">
+                    <a href="property-single.html" class="d-inline-block mb-4"><img src="{% static 'warehouse/property_2.jpg' %}" alt="Image" class="img-fluid"></a>
+                    <div class="ftco-media-details">
+                      <h3>HD17 19 Utica Ave.</h3>
+                      <p>New York - USA</p>
+                      <strong>$20,000,000</strong>
+                    </div>
+      
+                  </div> 
+                </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-5 mb-lg-5 ">
+              <div class="ftco-media-1">
+                  <div class="ftco-media-1-inner">
+                    <a href="property-single.html" class="d-inline-block mb-4"><img src="{% static 'warehouse/property_3.jpg' %}" alt="Image" class="img-fluid"></a>
+                    <div class="ftco-media-details">
+                      <h3>HD17 19 Utica Ave.</h3>
+                      <p>New York - USA</p>
+                      <strong>$20,000,000</strong>
+                    </div>
+      
+                  </div> 
+                </div>
+          </div>-->
+
+
+        </div>
+      </div>
+    </div>
+    
+    
+    
+
+  </div> <!-- .site-wrap -->
+
+  <a href="#top" class="gototop"><span class="icon-angle-double-up"></span></a> 
+
+  <script src="{% static 'warehouse/jquery-3.3.1.min.js' %}"></script>
+  <script src="{% static 'warehouse/jquery-ui.js' %}"></script>
+  <script src="{% static 'warehouse/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'warehouse/aos.js' %}"></script>
+  <script src="{% static 'warehouse/main.js' %}"></script>
+    
+  </body>
+</html>

@@ -1,0 +1,136 @@
+<html> 
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>FlatMates</title>
+    <link href="{% static 'images/mylogo.ico' %}" rel="icon" type="image/x-icon" />
+    
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="{% static 'c/bootstrap.min.css' %}"/>
+	<link rel="stylesheet" href="{% static 'c/font-awesome.min.css' %}"/>
+	<link rel="stylesheet" href="{% static 'c/animate.css' %}"/>
+	<link rel="stylesheet" href="{% static 'c/owl.carousel.css' %}"/>
+    <link rel="stylesheet" href="{% static 'c/style.css' %}"/>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'azenta/css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'azenta/css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'azenta/css/jquery-ui.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'azenta/css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'azenta/css/style.css' %}" type="text/css">
+</head>
+
+
+
+    <style>
+        body, html {
+          height: 100%;
+          margin: 0;
+        }
+        
+        .bg {
+          /* The image used */
+          background-image: url("{% static 'images/t4.jpg' %}");
+        
+          /* Full height */
+          height: 100%; 
+        
+          /* Center and scale the image nicely */
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+        </style>
+        </head>
+        <header class="header-section">
+            <div class="top-nav">
+                <div class="container">
+                    <div class="row">
+                      <div class="col-lg-20">
+                          <nav class="main-menu">
+                              <ul>
+                                  <li><img src="{% static 'images/mylogod.png' %}" alt="" width="90px" height="100px"></html></li>
+                                    <li class="active"><a href="bg">Home</a></li>
+                                    <li><a href="owner">ShareHome</a></li>
+                                    <li><a href="screen">RentHome</a></li>
+                                    <li><a href="homeshare">PostMate</a></li>
+                                    <li><a href="roomfind">FindMate</a></li>
+                                    <li><a href="locate">ContactUs</a></li>
+                                    <li><a href="logout">LOGOUT</a></li>
+                                   </ul>
+                            </nav>
+                        </div>
+         
+                    </div>
+                </div>
+            </div>
+            
+        </header>
+   <br><br><br><br><br><br>
+        <div class="bg">
+    <div class="container">
+        <div class="row">
+            {% for ow in ow %}
+            <div class="col-lg-4 col-md-6">
+                <!-- feature -->
+                <div class="feature-item">
+                    <div class="sale-notic"><a href="{% url 'delete' ow.id %}" style="color: white;">Delete</a></div>
+                    <div class="feature-pic set-bg" data-setbg="'img/feature/feature-1.jpg'">
+                    <img src="{% static 'images/1.png' %}" alt="John" style="width:100%" height="100%">
+                        
+                    </div>
+                    <div class="feature-text">
+                        <div class="text-center feature-title">
+                            <h5>{{ow.address}}</h5>
+                            <p><i class="fa fa-map-marker"></i> {{ow.city}}</p>
+                        </div>
+                        <div class="room-info-warp">
+                            <div class="room-info">
+                                <div class="rf-left">
+                                    <p><i class="fa fa-th-large"></i> {{ow.flattype}}</p>
+                                    <p><i class="fa fa-bed"></i> {{ow.furnishing}}</p>
+                                </div>
+                                <div class="rf-right">
+                                    <p><i class="fa fa-car"></i> ONLY {{ow.avlgen}}</p>
+                                    <p><i class="fa fa-bath"></i> 6 Bathrooms</p>
+                                </div>	
+                            </div>
+                            
+                            <div class="room-info">
+                                
+                                <div class="rf-left">
+                                    <p><i class="fa fa-user"></i> {{ow.avlfrom}}</p>
+                                </div>
+                                <div class="rf-right">
+                                    <p><i class="fa fa-clock-o"></i>{{ow.avlupto}}</p>
+                                </div>	
+                            </div>
+                            <div class="room-info">
+                                <div class="rf-left">
+                                    <p><i class="fa fa-user"></i> {{ow.aminities}}</p>
+                                </div>	
+                            </div>
+                        </div>
+                        <a href="#" class="room-price">₹{{ow.price}}</a>
+                    </div>
+                </div>
+            </div>
+            
+  {% endfor %}
+    </div>      
+
+        <form method="post" action="">
+            {% csrf_token %}
+              <h1>Are you sure you want to delete?</h1><br>
+              <input class="btn btn-danger" type="submit" value="Yes" />
+              <a href="/dele"><div class="btn btn-primary">Cancel</div></a>
+         </form>
+    </body>
+</html>

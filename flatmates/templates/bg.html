@@ -1,0 +1,481 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Azenta Template">
+    <meta name="keywords" content="Azenta, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FlatMates</title>
+    <link href="{% static 'images/mylogo.ico' %}" rel="icon" type="image/x-icon" />
+    
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'azenta/css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'azenta/css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'azenta/css/jquery-ui.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'azenta/css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'azenta/css/style.css' %}" type="text/css">
+    
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+
+
+    <!-- Header Section Begin -->
+     <header class="header-section">
+        <div class="top-nav">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <nav class="main-menu">
+                            <ul>
+                                <li class="active"><a href="bg">Home</a></li>
+                                <li><a href="owner">RentHome</a></li>
+                                <li><a href="screen">FindRent</a></li>
+                                <li><a href="homeshare">ShareHome</a></li>
+                                <li><a href="roomfind">FindShare</a></li>
+                                <li><a href="review">Review</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="top-right">
+                            <div class="language-option">
+                                <img src="img/flag.png" alt="">
+                                <span>Hello,{{user.first_name}}</span>
+                                <i class="fa fa-angle-down"></i>
+                                <div class="flag-dropdown">
+                                    <ul>
+                                        <li><a href="subprofile/{{user.id}}">PROFILE</a></li>
+                                        <li><a href="dele">MANAGE POST</a></li>
+                                        <li><a href="logout">LOGOUT</a></li>
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                            <a href="locate" class="">CONTACTUS</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="nav-logo">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3">
+                       
+                            <a href="./index.html"><img src="{% static 'images/logo.png' %}" alt="" width="150px" height="100px"></a>
+                       
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="nav-logo-right">
+                            <ul>
+                                <li>
+                                    <i class="icon_phone"></i>
+                                    <div class="info-text">
+                                        <span>Phone:</span>
+                                        <p>(+91)8460250047</p>
+                                    </div>
+                                </li>
+                            
+                                <li>
+                                    <i class="icon_mail"></i>
+                                    <div class="info-text">
+                                        <span>Email:</span>
+                                        <p>pratik.turakhiya@gmail.com</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section Begin -->
+    <section class="hero-section">
+        <div class="hero-items owl-carousel">
+            {% for o in ow %}
+            <div class="single-hero-item set-bg" data-setbg="{% static 'azenta/img/hero/hero-1.jpg' %}">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 offset-lg-2">
+                            <div class="hero-text">
+                                <p class="room-location"><i class="icon_pin"></i> {{o.city}}</p>
+                                <h2>{{o.address}}</h2>
+                                <div class="room-price">
+                                    <span>Start Form:</span>
+                                    <p>₹{{o.price}}</p>
+                                </div>
+                                <ul class="room-features">
+                                    <li>
+                                        <i class="fa fa-arrows"></i>
+                                        <p>{{o.flattype}}</p>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-bed"></i>
+                                        <p>{{o.furnishing}}</p>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-bath"></i>
+                                        <p>ONLY {{o.avlgen}}</p>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-car"></i>
+                                        <p>{{o.des}}</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% for o in ow %}
+            <div class="single-hero-item set-bg" data-setbg="{% static 'azenta/img/hero/hero-2.jpg' %}">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 offset-lg-2">
+                            <div class="hero-text">
+                                <p class="room-location"><i class="icon_pin"></i> {{o.city}}</p>
+                                <h2>{{o.address}}</h2>
+                                <div class="room-price">
+                                    <span>Start Form:</span>
+                                    <p>₹{{o.price}}</p>
+                                </div>
+                                <ul class="room-features">
+                                    <li>
+                                        <i class="fa fa-arrows"></i>
+                                        <p>{{o.flattype}}</p>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-bed"></i>
+                                        <p>{{o.furnishing}}</p>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-bath"></i>
+                                        <p>ONLY {{o.avlgen}}</p>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-car"></i>
+                                        <p>{{o.des}}</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="thumbnail-pic">
+            <div class="thumbs owl-carousel">
+                <div class="item">
+                    <img src="{% static 'azenta/img/hero/dot-1.jpg' %}" alt="">
+                </div>
+                <div class="item">
+                    <img src="{% static 'azenta/img/hero/dot-2.jpg' %}" alt="">
+                </div>
+                <div class="item">
+                    <img src="{% static 'azenta/img/hero/dot-3.jpg' %}" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- Search Form Section Begin -->
+    <div class="search-form">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="search-form-text">
+                        <div class="search-text">
+                            <i class="fa fa-search"></i>
+                            Find Your Home
+                        </div>
+                        <div class="home-text">
+                            <i class="fa fa-home"></i>
+                            House For Rent
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Search Form Section End -->
+
+    <!-- How It Works Section Begin -->
+    <section class="howit-works spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <span>Find Your Dream House</span>
+                        <h2>How It Works</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="single-howit-works">
+                        <img src="{% static 'azenta/img/howit-works/howit-works-1.png' %}" alt="">
+                        <h4>Search & Find Flates</h4>
+                        <p>Search & find spaces in 10+ Cities accross India</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="single-howit-works">
+                        <img src="{% static 'azenta/img/howit-works/howit-works-2.png' %}" alt="">
+                        <h4>Find A Mate to Share</h4>
+                        <p>Need to share or find space?post and find here</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="single-howit-works">
+                        <img src="{% static 'azenta/img/howit-works/howit-works-3.png' %}" alt="">
+                        <h4>Direct & Easy Contact</h4>
+                        <p>Conatact at the few clicks and get a new space to live</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- How It Works Section End -->
+
+    <!-- Feature Section Begin -->
+    <section class="feature-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <span>Listing From Our Agents</span>
+                        <h2>Featured Properties</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="feature-carousel owl-carousel">
+                  
+                    {% for o in ow %}
+                    <div class="col-lg-4">
+                        <div class="feature-item">
+                            <div class="fi-pic set-bg" data-setbg="{% static 'azenta/img/feature/feature-2.jpg' %}">
+                                <div class="pic-tag">
+                                    <div class="f-text">feauture</div>
+                                    <div class="s-text">For Rent</div>
+                                </div>
+                                <div class="feature-author">
+                                    <div class="fa-pic">
+                                        <img src="{% static 'azenta/img/feature/f-author-2.jpg' %}" alt="">
+                                    </div>
+                                    <div class="fa-text">
+                                        <span>{{o.name}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fi-text">
+                                <div class="inside-text">
+                                    <h4>{{o.city}}</h4>
+                                    <ul>
+                                        <li><i class="fa fa-map-marker"></i> {{o.address}}</li>
+                                        <li><i class="fa fa-tag"></i> {{o.furnishing}}</li>
+                                    </ul>
+                                    <h5 class="price">₹{{o.price}}<span>/month</span></h5>
+                                </div>
+                                <ul class="room-features">
+                                    <li>
+                                        <i class="fa fa-arrows"></i>
+                                        <p>{{o.flattype}}</p>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-bed"></i>
+                                        <p>ONLY:{{o.avlgen}}</p>
+                                    </li>
+                                
+                                  
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+               
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Feature Section End -->
+
+    <!-- Video Section Begin -->
+    <div class="video-section set-bg" data-setbg="{% static 'azenta/img/video-bg.jpg' %}">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="video-text">
+                        <a href="{% static 'img/find.mp4' %}" class="play-btn video-popup"><i class="fa fa-play"></i></a>
+                        <h4>Find The Perfect</h4>
+                        <h2>Living Space Near You</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Video Section End -->
+
+    <!-- Top Properties Section Begin -->
+    <div class="top-properties-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="properties-title">
+                        <div class="section-title">
+                            <span>Top Spaces For You</span>
+                            <h2>Top Venue</h2>
+                        </div>
+                        <a href="screen" class="top-property-all">View All Venue</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="top-properties-carousel owl-carousel">
+                
+                {% for o in ow %}
+                <div class="single-top-properties">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="stp-pic">
+                                <img src="{% static 'azenta/img/properties/properties-2.jpg' %}" alt="">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="stp-text">
+                                <div class="s-text">For Rent</div>
+                                <h2>{{o.address}}({{o.city}})</h2>
+                                <div class="room-price">
+                                    <span>Start From:</span>
+                                    <h4>₹{{o.price}}</h4>
+                                </div>
+                                <div class="properties-location"><i class="icon_pin"></i> DES:{{o.des}}</div>
+                                <p>FROM-{{o.avlfrom}} <br> UPTO-{{o.avlupto}}</p>
+                                <ul class="room-features">
+                                    <li>
+                                        <i class="fa fa-arrows"></i>
+                                        <p>{{o.flattype}}</p>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-bed"></i>
+                                        <p>{{o.furnishing}}</p>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-bath"></i>
+                                        <p>FOR-{{o.avlgen}}</p>
+                                    </li>
+                               
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!-- Top Properties Section End -->
+
+    <!-- Partner Carousel Section Begin -->
+
+    <!-- Partner Carousel Section End -->
+
+    <!-- Footer Section Begin -->
+    <footer class="footer-section set-bg" data-setbg="{% static 'azenta/img/footer-bg.jpg' %}">
+        <div class="container">
+            <div class="footer-text">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="footer-logo">
+                            <div class="logo">
+                                <a href="#"><img src="{% static 'images/flatmates.jpg' %}" alt=""  width="250" height="100"></a>
+                            </div>
+                            <p>Subscribe our newsletter and get notification about new updates.</p>
+                            <form action="#" class="newslatter-form">
+                                <input type="text" placeholder="Enter your email...">
+                                <button type="submit"><i class="fa fa-location-arrow"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 offset-lg-1">
+                        <div class="footer-widget">
+                            <h4>Available City</h4>
+                            <ul>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Ahmedabad</a></li>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Bangalore</a></li>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Chennai</a></li>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Delhi</a></li>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Hyderabad</a></li>
+                            </ul>
+                   
+                            <ul>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Jaipur</a></li>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Mumbai</a></li>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">New Delhi</a></li>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Pune</a></li>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Surat</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="footer-widget">
+                            <h4>Social</h4>
+                            <ul class="social">
+                                <li><i class="ti-facebook"></i> <a href="#">Facebook</a></li>
+                                <li><i class="ti-instagram"></i> <a href="#">Instagram</a></li>
+                                <li><i class="ti-twitter-alt"></i> <a href="#">Twitter</a></li>
+                                <li><i class="ti-google"></i> <a href="#">Google+</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="footer-widget">
+                            <h4>Contact Us</h4>
+                            <ul class="contact-option">
+                                <li><i class="fa fa-map-marker"></i> Anantshilp Society,Pune</li>
+                                <li><i class="fa fa-phone"></i> (+91)8460250047 </li>
+                                <li><i class="fa fa-envelope"></i> Pratik.Turakhiya@gmail.com</li>
+                                <li><i class="fa fa-clock-o"></i> Mon - Sat, 08 AM - 06 PM</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright-text">
+                <p><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                 
+                        <h2>FLATMATES</h2>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p></p>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="{% static 'azenta/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'azenta/js/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'azenta/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'azenta/js/main.js' %}"></script>
+</body>
+
+</html>

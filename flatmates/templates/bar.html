@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+        table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+        
+        td, th {
+          border: 1px solid blue;
+          text-align: left;
+          padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+          background-color: skyblue;
+        }
+    </style>
+    
+ </head>
+  <body>  
+    <h2>HTML Table</h2>
+    <div style="text-align:center"><h1>Search Page</h1></div>
+
+    <form action="data" method="get">
+      <div style="text-align:center"><input name="q" type="text" class="Large" placeholder="Search your dream Flat""></div>
+      <div style="text-align:center"><button class="btn">Submit<a href="data"></a></button></div>
+    </form>
+    <table>
+      <tr>
+        <th>NAME</th>
+        <th>GENDER</th>
+        <th>CITY</th>
+        <th>PRICE</th>
+      </tr>
+      {% for o in ow %}
+      <tr>
+        <td>{{o.name}}</td>
+        <td>{{o.avlgen}}</td>
+        <td>{{o.city}}</td>
+        <td>{{o.price}}</td>
+      </tr>
+      {% endfor %}
+    </table>  <!-- Left column -->
+ 
+  </body>
+</html>

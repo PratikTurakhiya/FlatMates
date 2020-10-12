@@ -1,0 +1,192 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+	<title>Mondy | Real Estate HTML Template</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="Real estate HTML Template">
+	<meta name="keywords" content="real estate, html">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- Favicon -->
+	<link href="img/favicon.ico" rel="shortcut icon"/>
+
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i,900%7cRoboto:400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+
+ 
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="{% static 'roomfind/bootstrap.min.css' %}"/>
+	<link rel="stylesheet" href="{% static 'roomfind/style.css' %}"/>
+</head>
+<body>
+	<!-- Page Preloder -->
+	<div id="preloder">
+		<div class="loader"></div>
+	</div>
+	<!-- Single Property Section end -->
+	<section class="single-property-section spad">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8">
+					<div class="single-property">
+						<div class="sp-image">
+							<img src="{% static 'images/1.png' %}" alt="">
+					
+						</div>
+						<div class="row">
+							<div class="col-lg-8">
+								<div class="property-header">
+									<h3>{{object.address}}</h3>
+									<h5>{{object.city}} </h5>
+								</div>
+							</div>
+							<div class="col-lg-4 text-left text-lg-right">
+								<div class="property-header">
+									<h3>₹{{object.price}}</h3>
+									<p>{{object.hometype}}</p>
+								</div>
+							</div>
+						</div>
+						<div class="property-info-bar">
+							<div class="row">
+								<div class="col-lg-7">
+									<div class="pi-metas">
+										<div class="pi-meta">Bed-{{object.room}} </div>
+										<div class="pi-meta">Bath-{{object.bath}}</div>
+										<div class="pi-meta">Parking-{{object.parking}}</div><br>
+										
+									</div>
+								</div>
+								<div class="col-lg-5 text-left text-lg-right">
+									<a href="#" class="offer-btn">Make an Offer</a>
+								</div>
+							</div>
+						</div>
+						<div class="property-text">
+							<h4>Details</h4>
+							<p>{{object.des}} </p>
+						</div>
+						<div class="property-feature">
+							<div class="row">
+								<div class="col-6 col-sm-4 col-md-3 col-lg-2">
+									<div class="pf-box">
+										<h6>House Type</h6>
+										<p>{{object.hometype}}</p>
+									</div>
+								</div>
+								<div class="col-6 col-sm-4 col-md-3 col-lg-2">
+									<div class="pf-box">
+										<h6>BedRooms</h6>
+										<p>{{object.room}}</p>
+									</div>
+								</div>
+								<div class="col-6 col-sm-4 col-md-3 col-lg-2">
+									<div class="pf-box">
+										<h6>Baths</h6>
+										<p>{{object.bath}}</p>
+									</div>
+								</div>
+								<div class="col-6 col-sm-4 col-md-3 col-lg-2">
+									<div class="pf-box">
+										<h6>Parking</h6>
+										<p>{{object.parking}}</p>
+									</div>
+								</div>
+								
+							</div>
+							<div class="row">
+								<div class="col-6 col-sm-4 col-md-3 col-lg-2">
+									<div class="pf-box">
+										<h6>Available For</h6>
+										<p>{{object.lgender}}</p>
+									</div>
+								</div>
+								<div class="col-6 col-sm-4 col-md-3 col-lg-2">
+									<div class="pf-box">
+										<h6>From</h6>
+										<p>{{object.avlfrom}}</p>
+									</div>
+								</div>
+								<div class="col-6 col-sm-4 col-md-3 col-lg-3">
+									<div class="pf-box">
+										<h6>Upto</h6>
+										<p> {{object.avlupto}}</p>
+									</div>
+								</div>
+								<div class="col-6 col-sm-4 col-md-3 col-lg-2">
+									<div class="pf-box">
+										<h6>Funnishing Type</h6>
+										<p>{{object.furnishing}}</p>
+									</div>
+								</div>
+							</div>	
+						</div>
+						<div class="property-text">
+							<h4>Contact Info</h4>
+							<p> </p>
+						</div>
+						<div class="property-feature">
+							<div class="row">
+								<div class="col-6 col-sm-4 col-md-3 col-lg-2">
+									<div class="pf-box">
+										<h6>Full Name</h6>
+										<p>{{object.name}}</p>
+									</div>
+								</div>
+								<div class="col-6 col-sm-4 col-md-3 col-lg-2">
+									<div class="pf-box">
+										<h6>Email</h6>
+										<p>{{object.email}}</p>
+									</div>
+								</div>
+								<div class="col-6 col-sm-4 col-md-3 col-lg-2">
+									<div class="pf-box">
+										<h6>Phone</h6>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										<p>{{object.mo}}</p>
+									</div>
+								</div>
+								<div class="col-6 col-sm-4 col-md-3 col-lg-2">
+									<div class="pf-box">
+										<h6>Gender</h6>
+										<p>{{object.gender}}</p>
+									</div>
+								</div>
+								
+							</div>
+							<div class="property-feature">
+								<div class="row">
+									<div class="col-6 col-sm-4 col-md-3 col-lg-2">
+										<div class="pf-box">
+											<h6>Interest</h6>
+											<p>{{object.interest}}</p>
+										</div>
+									</div>
+									<div class="col-6 col-sm-4 col-md-3 col-lg-2">
+										<div class="pf-box">
+											<h6>AMINITIES</h6>
+											<p>{{object.aminities}}</p>
+										</div>
+									</div>
+					
+									<div class="col-6 col-sm-4 col-md-3 col-lg-2">
+										<div class="pf-box">
+											<h6>Neighbour</h6>
+											<p>{{object.neighborhood}}</p>
+										</div>
+									</div>
+									
+								</div>
+					</div>
+			</div>
+		</div>
+	</section>
+	<!--  Section end -->
+
+	
+	<!--====== Javascripts & Jquery ======-->
+	<script src="{% static 'roomfind/jquery-3.2.1.min.js' %}"></script>
+	<script src="{% static 'roomfind/main.js' %}"></script>
+
+	</body>
+</html>

@@ -1,0 +1,238 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FlatMates</title>
+    <link href="{% static 'images/mylogo.ico' %}" rel="icon" type="image/x-icon" />
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="{% static 'c/material-design-iconic-font.min.css' %}">
+    <link rel="stylesheet" href="{% static 'c/nouislider.min.css' %}">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="{% static 'ocss/style.css' %}">
+
+</head>
+<style>
+    .slidecontainer {
+      width: 100%;
+    }
+    
+    .slider {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 10px;
+      border-radius: 5px;
+      background:black;
+      outline: none;
+      opacity: 0.7;
+      -webkit-transition: .2s;
+      transition: opacity .2s;
+    }
+    
+    .slider:hover {
+      opacity: 1;
+    }
+    
+    .slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 23px;
+      height: 24px;
+      border: 0;
+      background: white;
+      cursor: pointer;
+    }
+    
+    .slider::-moz-range-thumb {
+      width: 23px;
+      height: 24px;
+      border: 0;
+      background: url('contrasticon.png');
+      cursor: pointer;
+    }
+    .header {
+        padding: 10px;
+        text-align: center;
+        background: black;
+        color: white;
+        font-size: 30px;
+      
+    }
+    a {
+        background-color:firebrick;
+        color: white;
+        padding: .1em .5em;
+        text-decoration: none;
+        text-transform: capitalize;
+      }
+      
+    </style>
+<body>
+        <div class="header">
+        <div>
+            <img src="{% static 'images/logo.png' %}" alt="" width="150px" height="100px">
+        </div>
+ 
+        <a href="bg">Home</a>
+        <a href="owner">RentHome</a>
+        <a href="screen">FindOnRent</a>
+        <a href="homeshare">ShareHome</a>
+        <a href="roomfind">FindOnShare</a>
+        <a href="review">Review</a>
+        <a href="locate">ContctUs</a>
+        <a href="logout">Logout</a>
+      </div>
+    <div class="main">
+
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-img">
+                    <img src="{% static 'images/home.jpg' %}" alt="" style="height: 1100px; width: 600px;" >
+                    <div class="signup-img-content">
+                    </div>
+                </div>
+                <div class="signup-form">
+                    <form method="POST" class="register-form" enctype="multipart/form-data" action="owner">
+                        {% csrf_token %}
+                        <div class="form-row">
+                            <div class="form-group">
+                                <div class="form-input">
+                                    <label for="first_name" class="required">full name</label>
+                                    <input type="text" name="Name"  placeholder="full name">
+                                </div>
+                                <div class="form-input">
+                                    <label for="address" class="required">Address</label>
+                                    <input class="input--style-3" type="text" placeholder="type address" name="Address">
+                                </div>
+                                <div class="form-input">
+                                    <label for="company" class="required">Home Description</label>
+                                    <input class="input--style-3" type="text" placeholder="descrpton" name="Des">
+                                </div>
+                                <div class="form-input">
+                                    <label for="email" class="required">Email</label>
+                                    <input type="text" name="Email" id="email" placeholder="Mail id"/>
+                                </div>
+                                <div class="form-input">
+                                    <label for="phone_number" class="required">Phone number</label>
+                                    <input type="text" name="phone" id="phone_number" placeholder="mobile"/>
+                                </div>
+                                <label for="city">AVAILABLE FOR</label>
+                                <select name="Gender">
+                                  <option value="MALE">MALE</option>
+                                  <option value="FEMALE">FEMALE</option>
+                                  <option value="ANY">ANY</option>
+                                  </select> 
+                               
+                                  <br><br>
+                                  <label for="flattype">FURNISHING:</label>
+                                  <select name="Furniture" id="furniture">
+                                    <option value="furnished">furnished</option>
+                                    <option value="semi-furnished">semi-furnished</option>
+                                    <option value="unfurnished">unfurnished</option>
+                                </select>
+                                <label for="meal_preference">City</label>
+                                            <select name="City">
+                                        <option value="Ahmedabad">Ahmedabad</option>
+                                        <option value="Bangalore">Bangalore</option>
+                                        <option value="Chennai">Chennai</option>
+                                        <option value="Hyderabad">Hyderabad</option>
+                                        <option value="Jaipur">Jaipur</option>
+                                        <option value="KolKata">Kolkata</option>
+                                        <option value="Mumbai">Mumbai</option>
+                                        <option value="New Delhi">New Delhi</option>
+                                        <option value="Pune">Pune</option>
+                                        <option value="Surat">Surat</option>
+                                    </select>
+                          
+                                <div class="label-flex">
+                                    <label for="payment">flat type</label>
+                                </div>
+                                <div class="form-radio-group">            
+                               
+                                    <select name="Flattype">
+                                        <option value="1BHK">1BHK</option>
+                                        <option value="2BHK">2BHK</option>
+                                        <option value="3BHK">3BHK</option>
+                                        <option value="4BHK">4BHK</option>
+                                        <option value="5BHK">5BHK</option>
+                                        <option value="MORE">MORE</option>
+                                        </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">        
+                                <label for="meal_preference">Upload picture</label>          
+                                <input type="file" name="file" id="filename"><br>
+                                <label for="from">AVAILABLE FROM:</label>
+                                <input type="date" id="birthday" name="From">
+                                <label for="to">UPTO:</label>
+                                <input type="date" id="birthday" name="To">
+                         
+    
+                                <div class="form-radio">
+                          
+                                </div>
+                                
+                           
+                            
+                                  <label for="from">AMINITIES</label>
+                                  <input type="checkbox" id="vehicle1" name="vehicle" value="WIFI">
+                                  <label for="vehicle1"> WIFI</label>
+                                  <input type="checkbox" id="vehicle2" name="vehicle" value="PARKING">
+                                  <label for="vehicle2"> PARKING</label>
+                                  <input type="checkbox" id="vehicle1" name="vehicle" value="WASHING MACHINE">
+                                  <label for="vehicle1"> WASHING MACHINE</label>
+                                  <input type="checkbox" id="vehicle2" name="vehicle" value="AC">
+                                  <label for="vehicle2"> AC</label>
+                                  <input type="checkbox" id="vehicle1" name="vehicle" value="FOOD">
+                                  <label for="vehicle1"> FOOD</label>
+                                  <input type="checkbox" id="vehicle2" name="vehicle" value="PARK">
+                                  <label for="vehicle2"> PARK</label>
+                                  <input type="checkbox" id="vehicle2" name="vehicle" value="FRIDGE">
+                                  <label for="vehicle2"> FRIDGE</label>
+                                  <input type="checkbox" id="vehicle1" name="vehicle" value="GYM">
+                                  <label for="vehicle1"> GYM</label>
+                                  <input type="checkbox" id="vehicle2" name="vehicle" value="TV">
+                                  <label for="vehicle2"> TV</label>
+                            </div>
+                        </div>
+                        <div class="slidecontainer">
+                            <input type="range" min="500" max="10000" value="50" class="slider" id="myRange" name="price">
+                            <p style="color: red;">PRICE    : <span id="demo"></span></p>
+       
+                          </div>
+                          
+                        <div class="form-submit">
+                            <input type="submit" value="Submit" class="submit" id="submit" name="submit" />
+                           
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        function goback() {
+            location.replace("index")
+          }
+        var slider = document.getElementById("myRange");
+        var output = document.getElementById("demo");
+        output.innerHTML = slider.value;
+        
+        slider.oninput = function() {
+          output.innerHTML = this.value;
+        }
+        </script>
+    <!-- JS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/nouislider/nouislider.min.js"></script>
+    <script src="vendor/wnumb/wNumb.js"></script>
+    <script src="vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="vendor/jquery-validation/dist/additional-methods.min.js"></script>
+    <script src="js/main.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

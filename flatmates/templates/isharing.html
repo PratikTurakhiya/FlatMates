@@ -1,0 +1,372 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Aler Template">
+    <meta name="keywords" content="Aler, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FlatMates</title>
+    <link href="{% static 'images/mylogo.ico' %}" rel="icon" type="image/x-icon" />
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'sharingcss/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'sharingcss/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'sharingcss/elegant-icons.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'sharingcss/jquery-ui.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'sharingcss/nice-select.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'sharingcss/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'sharingcss/magnific-popup.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'sharingcss/richtext.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'sharingcss/image-uploader.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'sharingcss/slicknav.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'sharingcss/style.css' %}" type="text/css">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'azenta/css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'azenta/css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'azenta/css/jquery-ui.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'azenta/css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'azenta/css/style.css' %}" type="text/css">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+    <header class="header-section">
+        <div class="top-nav">
+            <div class="container">
+                <div class="row">
+                  <div class="col-lg-20">
+                      <nav class="main-menu">
+                          <ul>
+                              <li><img src="{% static 'images/mylogod.png' %}" alt="" width="90px" height="100px"></html></li>
+                                <li class="active"><a href="bg">Home</a></li>
+                                <li><a href="owner">RentHome</a></li>
+                                <li><a href="screen">FindOnRent</a></li>
+                                <li><a href="homeshare">ShareHome</a></li>
+                                <li><a href="roomfind">FindOnShare</a></li>
+                                <li><a href="locate">ContactUs</a></li>
+                                <li><a href="logout">LOGOUT</a></li>
+                               </ul>
+                        </nav>
+                    </div>
+     
+                </div>
+            </div>
+        </div>
+        
+    </header>
+
+    <!-- Header Section Begin -->
+ 
+    <!-- Header End -->
+
+    <!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-section spad set-bg" data-setbg="{% static 'img/breadcrumb-bg.jpg' %}">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-text">
+                        <h4>Home Sharing</h4>
+                        <div class="bt-option">
+                            <a href="./index.html"><i class="fa fa-home"></i> Home</a>
+                            <span>Sharing</span>
+                           </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Section End -->
+
+    <!-- Property Submit Section Begin -->
+    <section class="property-submit-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="property-submit-form">
+                        <form method="POST" class="register-form" enctype="multipart/form-data" action="homeshare">
+                            {% csrf_token %}
+                            <div class="pf-location">
+                                <h4>Contact Infomation</h4>
+                                <div class="location-inputs">
+                                    <input type="text" placeholder="Name" name="NAME">
+                                    <input type="email" placeholder="Email" name="EMAIL">
+                                    <input type="text" placeholder="Phone" name="PHONE">
+                                </div>
+                                <div class="status-item">
+                                    <label for="ps-rent">Male
+                                        <input type="checkbox" id="ps-rent" name="GENDER" value="male">
+                                        <span class="checkbox"></span>
+                                    </label>
+                                    <label for="ps-sale">Female
+                                        <input type="checkbox" id="ps-sale" name="GENDER" value="female">
+                                        <span class="checkbox"></span>  
+                                    </label>
+                                </div>
+                            </div>
+                         <!---      -->
+                            <div class="pf-location">
+                                <h4>Location</h4>
+                                <div class="location-inputs">
+                                    <input type="text" placeholder="Address" name="ADDRESS">
+                                    <input type="text" placeholder="Neighborhood" name="NEIGHBORHOOD">
+                                    <input type="text" placeholder="Description" name="DESCRIPTION">
+                                </div>
+                            </div>
+                            <div class="pf-status">
+                                <h4>Looking For</h4>
+                                <div class="status-ite">
+                                    <label for="ps-ren">Male
+                                        <input type="checkbox" name="ALLOWEDGEN" value="male">
+                                        <span class="checkbox"></span>
+                                    </label>
+                                    <label for="ps-sale">Female
+                                        <input type="checkbox"  name="ALLOWEDGEN" value="female">
+                                        <span class="checkbox"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="pf-feature">
+                                <h4>Interests & Habits</h4>
+                                <div class="features-list">
+                                    <div class="feature-ite">
+                                        <label for="air">Night Owl
+                                            <input type="checkbox"  name="INTEREST" value="NightOwl">
+                                            <span class="checkbox"></span>
+                                        </label>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <label for="lundry">Studious
+                                            <input type="checkbox" name="INTEREST" value="Studious">
+                                            <span class="checkbox"></span>
+                                        </label>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <label for="refrigerator">Fitness Freak
+                                            <input type="checkbox" name="INTEREST" value="FitnessFreak">
+                                            <span class="checkbox"></span>
+                                        </label>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <label for="washer">Sporty
+                                            <input type="checkbox"  name="INTEREST" value="Sporty">
+                                            <span class="checkbox"></span>
+                                        </label>
+                                    </div>
+                                    <div class="feature-ite">
+                                        <label for="pool">Travelling
+                                            <input type="checkbox" name="INTEREST" value="Travelling">
+                                            <span class="checkbox"></span>
+                                        </label>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <label for="wifi">Early bird
+                                            <input type="checkbox"  name="INTEREST" value="EarlyBird">
+                                            <span class="checkbox"></span>
+                                        </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <label for="tv">Party Lover
+                                            <input type="checkbox" name="INTEREST" value="PartyLover">
+                                            <span class="checkbox"></span>
+                                        </label>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <label for="gym">Vegan
+                                            <input type="checkbox"  name="INTEREST" value="Vegan">
+                                            <span class="checkbox"></span>
+                                        </label>
+                                    </div>
+                                    <div class="feature-ite">
+                                        <label for="pool">Non-Alcoholic
+                                            <input type="checkbox"  name="INTEREST" value="NonAlcoholic">
+                                            <span class="checkbox"></span>
+                                        </label>
+                                        <label for="wifi">Music Lover
+                                            <input type="checkbox"  name="INTEREST" value="MusicLover">
+                                            <span class="checkbox"></span>
+                                        </label>
+                                        &nbsp;&nbsp;&nbsp;
+                                        <label for="tv">Non-Smoker
+                                            <input type="checkbox"  name="INTEREST" value="NonSmoker"> 
+                                            <span class="checkbox"></span>
+                                        </label>
+                                        &nbsp;&nbsp;&nbsp;
+                                        <label for="gym">Pet Lover
+                                            <input type="checkbox"  name="INTEREST" value="PetLover">
+                                            <span class="checkbox"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="small">
+                                <label for="from">AVAILABLE FROM:</label>
+                                <input type="date" id="birthday" name="FROM">
+                                <label for="to">UPTO:</label>
+                                <input type="date" id="birthday" name="TO">
+                                <label for="to"></label>
+                                <label for="to"></label>
+                         <br>
+                            </div>
+                            <div class="pf-feature-price">
+                                <h4>Featured Price</h4>
+                                <div class="slidecontainer">
+                                    <input type="range" min="500" max="100000" value="50" class="slider" id="myRange" name="PRICE">
+                                    <p style="color: red;">PRICE : <span id="demo"></span></p>
+                                </div>
+                            </div>
+                            <div class="pf-feature">
+                                <h4>Property Features</h4>
+                                <div class="features-list">
+                                    <div class="feature-item">
+                                        <label for="air">Air conditioning
+                                            <input type="checkbox" id="air" name="AMINITIES" value="AC">
+                                            <span class="checkbox"></span>
+                                        </label>
+                                        <label for="lundry">Laundry
+                                            <input type="checkbox" id="lundry" name="AMINITIES" value="Laundry">
+                                            <span class="checkbox"></span>
+                                        </label>
+                                        <label for="refrigerator">Refrigerator
+                                            <input type="checkbox" id="refrigerator" name="AMINITIES" value="Fridge">
+                                            <span class="checkbox"></span>
+                                        </label>
+                                        <label for="washer">Washer
+                                            <input type="checkbox" id="washer" name="AMINITIES" value="Washer">
+                                            <span class="checkbox"></span>
+                                        </label>
+                                    </div>
+                                    <div class="feature-item">
+                                        <label for="pool">Swimming Pool
+                                            <input type="checkbox" id="pool" name="AMINITIES" value="Pool">
+                                            <span class="checkbox"></span>
+                                        </label>
+                                        <label for="wifi">Wifi
+                                            <input type="checkbox" id="wifi" name="AMINITIES" value="Wifi">
+                                            <span class="checkbox"></span>
+                                        </label>
+                                        <label for="tv">Tv Cable
+                                            <input type="checkbox" id="tv" name="AMINITIES" value="TV">
+                                            <span class="checkbox"></span>
+                                        </label>
+                                        <label for="gym">Gym
+                                            <input type="checkbox" id="gym" name="AMINITIES" value="Gym">
+                                            <span class="checkbox"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pf-feature-image">
+                                <h4>Featured Image</h4>
+                                <input type="file" name="IMAGE" multiple>
+                                <div class="feature-image-content" name="IMGE"></div>
+                            </div>
+                            <div class="pf-property-details">
+                                <h4>Property details</h4>
+                                <div class="form_wrap d-flex">
+                                <div class="single-field max_width ">
+                                    <select name="CITY">
+                                        <option data-display="City">City</option>
+                                        <option value="Ahmedabad">Ahmedabad</option>
+                                        <option value="Bangalore">Bangalore</option>
+                                        <option value="Chennai">Chennai</option>
+                                        <option value="Hyderabad">Hyderabad</option>
+                                        <option value="Jaipur">Jaipur</option>
+                                        <option value="KolKata">Kolkata</option>
+                                        <option value="Mumbai">Mumbai</option>
+                                        <option value="New Delhi">New Delhi</option>
+                                        <option value="Pune">Pune</option>
+                                        <option value="Surat">Surat</option>
+                                    </select>
+                                </div>
+                                <label for="to"></label>
+                                <label for="to"></label>
+                                <div class="single-field max_width ">
+                                    <select name="BEDROOM" >
+                                            <option data-display="BedRoom">BedRoom</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="1">3</option>
+                                            <option value="2">4</option>
+                                            <option value="2">5</option>
+                                    </select>
+                                </div>
+                                <div class="single-field max_width ">
+                                    <select name="FURNISHING" >
+                                            <option data-display="Funishing">Furnishing</option>
+                                            <option value="Furnished">Furnished</option>
+                                            <option value="SemiFunished">Semi-Funished</option>
+                                            <option value="NonFurnished">Non-Funnished</option>
+                                    </select>
+                                </div>
+                                <div class="single-field max_width ">
+                                    <select name="TYPE" >
+                                            <option data-display="Type">Type</option>
+                                            <option value="Apartment">Apartment</option>
+                                            <option value="Villa">Villa</option>
+                                            <option value="Bunglows">Bunglows</option>
+                                            <option value="Other">other</option>
+                                    </select>
+                                </div>
+                                <div class="single-field max_width ">
+                                    <select name="BATH" >
+                                            <option data-display="Bath">Bath</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="3+">More</option>
+                                    </select>
+                                </div>
+                                <div class="single-field max_width ">
+                                    <select name="PARKING" >
+                                            <option data-display="Parking">Parking</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="3+">More</option>
+                                    </select>
+                                </div>
+                                </div>
+                                <label></label>
+                                <button type="submit" class="site-btn">Submit Property</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Property Submit Section End -->
+
+    <script>
+        function goback() {
+            location.replace("index")
+          }
+        var slider = document.getElementById("myRange");
+        var output = document.getElementById("demo");
+        output.innerHTML = slider.value;
+        
+        slider.oninput = function() {
+          output.innerHTML = this.value;
+        }
+        </script>
+
+    <!-- Js Plugins -->
+    <script src="{% static 'hjs/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'hjs/bootstrap.min.js' %}"></script>
+    <script src="{% static 'hjs/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'hjs/mixitup.min.js' %}"></script>
+    <script src="{% static 'hjs/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'hjs/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'hjs/jquery.slicknav.js' %}"></script>
+    <script src="{% static 'hjs/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'hjs/jquery.richtext.min.js' %}"></script>
+    <script src="{% static 'hjs/image-uploader.min.js' %}"></script>
+    <script src="{% static 'hjs/main.js' %}"></script>
+</body>
+
+</html>

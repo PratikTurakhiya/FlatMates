@@ -1,0 +1,25 @@
+{% load static %}
+<div class="wrapper">
+    <span class="square individual">
+      <a class="ninth before after" href="index">BACK</a>
+    </span>
+  </div>
+  
+<!-- Add icon library -->
+<link rel="stylesheet" href="{% static 'c/pro.css' %}">
+<link rel="stylesheet" href="{% static 'c/hyper.css' %}">
+<body style="background-image: url('{% static 'images/try5.jpeg' %}')";>
+{% for p in profile %}
+<div class="card">
+  <img src="{% static 'images/pratik.jpg' %}" alt="John" style="width:100%">
+   <h1>{{p.first_name}} {{p.last_name}}</h1>
+  <p class="title">CEO & Founder, Example</p>
+  <p>Harvard University</p>
+  <a href="#"><i class="fa fa-dribbble"></i></a>
+  <a href="#"><i class="fa fa-twitter"></i></a>
+  <a href="#"><i class="fa fa-linkedin"></i></a>
+  <a href="#"><i class="fa fa-facebook"></i></a>
+  <p><button>{{p.email}}</button></p>
+</div>
+{% endfor %}
+</body>

@@ -1,0 +1,134 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html lang="zxx">
+   <head>
+      <title>Rating Website Form Responsive Widget Template:: w3layouts</title>
+      <!-- Meta tag Keywords -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta charset="UTF-8" />
+      <meta name="keywords" content="Rating Website Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements"
+         />
+      <script>
+         addEventListener("load", function () {
+         	setTimeout(hideURLbar, 0);
+         }, false);
+         
+         function hideURLbar() {
+         	window.scrollTo(0, 1);
+         }
+      </script>
+      <!-- Meta tag Keywords -->
+      <!-- css files -->
+      <link rel="stylesheet" href="{% static 'css/review.css' %}" type="text/css" media="all"/>
+      <!-- Style-CSS -->
+      <!-- Font-Awesome-Icons-CSS -->
+      <!-- //css files -->
+      <!-- web-fonts -->
+      <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700' rel="stylesheet">
+
+      <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+      <!-- Css Styles -->
+      <link rel="stylesheet" href="{% static 'azenta/css/bootstrap.min.css' %}" type="text/css">
+      <link rel="stylesheet" href="{% static 'azenta/css/font-awesome.min.css' %}" type="text/css">
+      <link rel="stylesheet" href="{% static 'azenta/css/jquery-ui.min.css' %}" type="text/css">
+      <link rel="stylesheet" href="{% static 'azenta/css/owl.carousel.min.css' %}" type="text/css">
+      <link rel="stylesheet" href="{% static 'azenta/css/style.css' %}" type="text/css">
+      <!-- //web-fonts -->
+   </head>
+   <body style="background-color: gray;">
+       <header class="header-section">
+        <div class="top-nav">
+            <div class="container">
+                <div class="row">
+                  <div class="col-lg-20">
+                      <nav class="main-menu">
+                          <ul>
+                              <li><img src="{% static 'images/mylogod.png' %}" alt="" width="90px" height="100px"></html></li>
+                                <li class="active"><a href="bg">Home</a></li>
+                                <li><a href="owner">RentHome</a></li>
+                                <li><a href="screen">FindOnRent</a></li>
+                                <li><a href="homeshare">ShareHome</a></li>
+                                <li><a href="roomfind">FindOnShare</a></li>
+                                <li><a href="locate">ContactUs</a></li>
+                                <li><a href="logout">LOGOUT</a></li>
+                               </ul>
+                        </nav>
+                    </div>
+     
+                </div>
+            </div>
+        </div>
+        
+    </header>
+      <!-- title -->
+      <h1 class="header-w3ls">Rating</h1>
+      <!-- //title -->
+      <!-- content -->
+      <div class="porduct-order-agile">
+         <form action="review" method="post">
+            {% csrf_token %}
+            <div class="main">
+               <div class="form-group-w3l">
+                  <p>Name</p>
+                  <input type="text" name="name" placeholder="" required="">
+               </div>
+               <div class="form-group-w3l">
+                  <p>Last Name</p>
+                  <input type="text" name="lastname" placeholder="" required="">
+               </div>
+            </div>
+            <div class="main">
+               <div class="form-group-w3l">
+                  <p>Phone</p>
+                  <input type="text" name="mo" placeholder="" required="">
+               </div>
+               <div class="form-group-w3l">
+                  <p>Email</p>
+                  <input type="Email" name="email" placeholder="" required="">
+               </div>
+            </div>
+            <div class="sub-hedder">
+               <h2> Please rate my Website</h2>
+               <div class="form-check">
+                  <input class="form-check-input" type="radio" name="rating" value="Very Bad" checked="">
+                  <label class="form-check-label">
+                  Very Bad
+                  </label>
+               </div>
+               <div class="form-check">
+                  <input class="form-check-input" type="radio" name="rating" value="Bad" checked="">
+                  <label class="form-check-label">
+                  Bad
+                  </label>
+               </div>
+               <div class="form-check">
+                  <input class="form-check-input" type="radio" name="rating" value="Very Good" checked="">
+                  <label class="form-check-label">
+                  Very Good
+                  </label>
+               </div>
+               <div class="form-check">
+                  <input class="form-check-input" type="radio" name="rating" value="Good" checked="">
+                  <label class="form-check-label">
+                  Good
+                  </label>
+               </div>
+               <div class="form-check">
+                  <input class="form-check-input" type="radio" name="rating" value="Excellent" checked="">
+                  <label class="form-check-label">
+                  Excellent
+                  </label>
+               </div>
+            </div>
+            <div class="form-control-w3l">
+               <p>Any Message...</p>
+               <textarea name="des" placeholder=""></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+         </form>
+        
+      </div>
+      <!-- //copyright -->
+   </body>
+</html>

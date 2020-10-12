@@ -1,0 +1,77 @@
+{% load static %}
+<html>
+<head>
+  <link rel="stylesheet" href="{% static 'c/detail.css' %}">
+</head>
+<body>
+    <h1><span class="blue"></span>Flat<span class="blue"></span> <span class="">Information</pan></h1>
+    <h2> <a href="http://pablogarciafernandez.com" target="_blank"></a></h2>
+    
+    <table class="container">
+        <thead>
+            <tr>
+                <th><h1>Type</h1></th>
+                <th><h1>Info</h1></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>OwnerName</td>
+                <td>{{object.name}}</td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>{{object.email}}</td>
+            </tr>
+            <tr>
+                <td>Mobile</td>
+                <td>{{object.mo}}</td>
+            </tr>
+            <tr>
+                <td>City</td>
+                <td>{{object.city}}</td>
+            </tr>
+        <tr>
+                <td>FlatType</td>
+                <td>{{object.flattype}}</td>
+        
+            </tr>
+        <tr>
+                <td>Price</td>
+                <td>{{object.price}}</td>
+              
+            </tr>
+        <tr>
+                <td>Furnishing</td>
+                <td>{{object.furnishing}}</td>
+            </tr>
+            <tr>
+                <td>Amnities</td>
+                <td>{{object.aminities}}</td>
+            </tr>
+            <tr>
+                <td>Available From</td>
+                <td>{{object.avlfrom}}</td>
+            </tr>
+            <tr>
+                <td>Available Upto</td>
+                <td>{{object.avlupto}}</td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td>{{object.avlgen}}</td>
+            </tr>
+        <tr>
+                <td>Address</td>
+                <td>{{object.address}}</td>
+        
+            </tr>
+        <tr>
+                <td>Description</td>
+                <td>{{object.des}}</td>
+              
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

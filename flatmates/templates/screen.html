@@ -1,0 +1,245 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>FlatMates</title>
+  <link href="{% static 'images/mylogo.ico' %}" rel="icon" type="image/x-icon" />
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" />
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="{% static 'c/bootstrap.min.css' %}"/>
+	<link rel="stylesheet" href="{% static 'c/font-awesome.min.css' %}"/>
+	<link rel="stylesheet" href="{% static 'c/animate.css' %}"/>
+	<link rel="stylesheet" href="{% static 'c/owl.carousel.css' %}"/>
+    <link rel="stylesheet" href="{% static 'c/style.css' %}"/>
+  
+    <link href="{% static 'search/css/main.css' %}" rel="stylesheet" />
+
+    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'azenta/css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'azenta/css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'azenta/css/jquery-ui.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'azenta/css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'azenta/css/style.css' %}" type="text/css">
+    
+</head>
+    
+<body>
+    <style>
+        body, html {
+          height: 100%;
+          margin: 0;
+        }
+        
+        .bg {
+          /* The image used */
+         /* background-image: url("{% static 'images/t.jpg' %}");*/
+        
+          /* Full height */
+          height: 100%; 
+        
+          /* Center and scale the image nicely */
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+ 
+.Large
+{
+  font-size: 16pt;
+  height: 50px;
+  width: 3000px;
+}
+.btn
+{
+  font-size: 16pt;
+  height: 45px;
+  width: 100px;
+}
+.lbl
+{
+  font-size: 16pt;
+  height: 30px;
+  width: 10px;
+}
+.dropbtn {
+  background-color: ;
+  color:blue;
+  position: center;
+  padding: 20px;
+  font-size: 16px;
+  border:double;
+}
+
+.dropdown {
+  position: center;
+  display: flex;
+  
+}
+
+.dropdown-content {
+  display:none;
+  position: absolute;
+  background-color:gray;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(114, 26, 26, 0.2), 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color:darkslategrey;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+        </style>
+        </head>
+        <header class="header-section">
+          <div class="top-nav">
+              <div class="container">
+                  <div class="row">
+                    <div class="col-lg-20">
+                        <nav class="main-menu">
+                            <ul>
+                                <li><img src="{% static 'images/mylogod.png' %}" alt="" width="90px" height="100px"></html></li>
+                                  <li class="active"><a href="bg">Home</a></li>
+                                  <li><a href="owner">RentHome</a></li>
+                                  <li><a href="screen">FindRent</a></li>
+                                  <li><a href="homeshare">ShareHome</a></li>
+                                  <li><a href="roomfind">FindShare</a></li>
+                                  <li><a href="locate">ContactUs</a></li>
+                                  <li><a href="logout">LOGOUT</a></li>
+                                 </ul>
+                          </nav>
+                      </div>
+       
+                  </div>
+              </div>
+          </div>
+          
+      </header>
+        <div class="s008">
+            <form action="data" method="get">
+              
+              <div class="inner-form">
+                <div class="basic-search">
+                  <div class="input-field">
+                    <input id="search" type="text" placeholder="Type Keywords" name="q" />
+                    <div class="icon-wrap">
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
+                        <path d="M18.869 19.162l-5.943-6.484c1.339-1.401 2.075-3.233 2.075-5.178 0-2.003-0.78-3.887-2.197-5.303s-3.3-2.197-5.303-2.197-3.887 0.78-5.303 2.197-2.197 3.3-2.197 5.303 0.78 3.887 2.197 5.303 3.3 2.197 5.303 2.197c1.726 0 3.362-0.579 4.688-1.645l5.943 6.483c0.099 0.108 0.233 0.162 0.369 0.162 0.121 0 0.242-0.043 0.338-0.131 0.204-0.187 0.217-0.503 0.031-0.706zM1 7.5c0-3.584 2.916-6.5 6.5-6.5s6.5 2.916 6.5 6.5-2.916 6.5-6.5 6.5-6.5-2.916-6.5-6.5z"></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="advance-search">
+                  <span class="desc">Advanced Search</span>
+                  <div class="row">
+                   <div class="dropdown">
+                      <button class="dropbtn">   Sort-Rent   </button>
+                      <div class="dropdown-content">
+                        <div style="text-align:center">
+                          <a href="LowToHigh">Low To High</a>
+                          <a href="HighToLow">High To Low</a>
+                        </div>
+                      </div>
+                  </div>
+                    <div class="dropdown">
+                        <button class="dropbtn">Gender</button>
+                        <div class="dropdown-content">
+                          <div style="text-align:center">
+                          <a href="searchmale">Male</a>
+                          <a href="searchfemale">Female</a><br>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                      <button class="dropbtn">FlatMates</a></button>
+                      <div class="dropdown-content">
+                       
+                      </div>
+                  </div>
+                  </div>
+                  
+                  <div class="row third">
+                    <div class="input-field">
+                      <div class="result-count">    
+                        <span>FLATMATES </span></div>
+                      <div class="group-btn">
+                      
+                        <button class="btn-search">Search<a href="data"></a></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <br><br>
+        <div class="bg">
+    <div class="container">
+        <div class="row">
+            {% for ow in own %}
+            <div class="col-lg-4 col-md-6">
+                <!-- feature -->
+                <div class="feature-item">
+                    <div class="sale-notic"><a href="screen/{{ow.id}}" style="color: white;">Explore</a></div>
+                    <div class="feature-pic set-bg" data-setbg="'img/feature/feature-1.jpg'">
+                    <img src="{% static 'images/1.png' %}" alt="John" style="width:100%" height="100%">
+                        
+                    </div>
+                    <div class="feature-text">
+                        <div class="text-center feature-title">
+                            <h5>{{ow.address}}</h5>
+                            <p><i class="fa fa-map-marker"></i> {{ow.city}}</p>
+                        </div>
+                        <div class="room-info-warp">
+                            <div class="room-info">
+                                <div class="rf-left">
+                                    <p><i class="fa fa-th-large"></i> {{ow.flattype}}</p>
+                                    <p><i class="fa fa-bed"></i> {{ow.furnishing}}</p>
+                                </div>
+                                <div class="rf-right">
+                                    <p><i class="fa fa-car"></i> ONLY {{ow.avlgen}}</p>
+                                    <p><i class="fa fa-bath"></i> 6 Bathrooms</p>
+                                </div>	
+                            </div>
+                            
+                            <div class="room-info">
+                                
+                                <div class="rf-left">
+                                    <p><i class="fa fa-user"></i> {{ow.avlfrom}}</p>
+                                </div>
+                                <div class="rf-right">
+                                    <p><i class="fa fa-clock-o"></i>{{ow.avlupto}}</p>
+                                </div>	
+                            </div>
+                            <div class="room-info">
+                                <div class="rf-left">
+                                    <p><i class="fa fa-user"></i> {{ow.aminities}}</p>
+                                </div>	
+                            </div>
+                        </div>
+                        <a href="#" class="room-price">₹{{ow.price}}</a>
+                    </div>
+                </div>
+            </div>
+  {% endfor %}
+    </div>
+
+      
+        </body>    
+  
